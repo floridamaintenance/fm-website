@@ -14,7 +14,24 @@ Added `logo-cell` entries for every logo file in `img/logos/` that wasn't alread
 
 Both are drone photos of what appears to be the Amerant Bank Arena roof (the "AMERANT BANK ARENA" lettering is visible in both). But they don't show a dirty→clean progression: `Before.JPG` is a wide aerial angle where the roof already reads bright white/clean; `After.JPG` is a tight top-down shot that actually shows more visible staining, streaking and a rust-colored patch near the bottom right. If anything "after" looks dirtier than "before," or they're two unrelated inspection/survey angles rather than a matched cleaning result. Left both files in place untouched (no compress/rename/publish) per Phase 3.5's "if unclear/unrelated" instruction — need Cory to confirm what job these are from and whether there's an actual matched pair before these go on a service page.
 
+**Update after Phase 5 asset sweep:** the site already has a real, properly-matched before/after pair in active use for the arena roof (`img/stadium-roof-before.jpg` / `img/stadium-roof-after.jpg`, both 1920x1280, live in the comparison slider on `services/exteriorstadiumcleaning.html`). `Before.JPG`/`After.JPG` are most likely the original raw drone captures that `stadium-roof-before/after.jpg` were cropped from, already superseded. Still left untouched/unpublished per the recommendation above — Cory can confirm and these can just be deleted if so.
+
 **Adaptation:** kept the 3.2 text rewrite as specified, but swapped the inline image in that story block from `img/leo.png` to `img/fleetInTunnel.jpg` (already used on contactus.html and services/index.html, so no new asset introduced) so the founding-story block has a fleet/tunnel photo instead of the mascot. Added the dedicated "Meet Leo" section from 3.3 immediately after, verbatim. Net result: no duplicate Leo image, Leo still gets his own section on the About page as intended.
+
+## Phase 5.1 — 4 additional unused files deleted beyond the named list (user-confirmed)
+
+The stragglers sweep found 4 more files with zero references anywhere in html/css/xml, all >500KB, confirmed with the user before deleting since they weren't in the punchlist's explicit 12-file list:
+- `img/power_scrubbing_category.jpg` (2.0MB) and `img/power_scrubbing_thumb.jpg` (2.0MB) — orphaned. The real, actively-used hero/card image for power scrubbing is `img/power_scrubbing_card.jpg` (175KB, already small). This also means **Phase 5.2's instruction to compress `power_scrubbing_category.jpg` as "page-hero background" is stale** — that file isn't the hero background and isn't referenced anywhere. No compression was needed for power scrubbing; skipped.
+- `img/wide-arena-candidates-contact.jpg` (0.92MB) — unused.
+- `img/barrier-wall-cleaning-loop.gif` (0.78MB) — unused.
+
+### Unused stragglers kept (each <500KB, per the "keep + log" rule)
+All confirmed zero references in html/css/xml:
+`hero-mobile.jpg` (0.46MB), `IMG_5696.jpg` (0.45MB), `softwash-tunnel-wall-washing.jpg` (0.44MB), `arena-entrance-crew-yellow-shirts.jpg` (0.42MB — note: the punchlist assumed this `.jpg` was the "used twin" of the deleted `.png`; it is not actually referenced either, but is under the size threshold so it was kept rather than deleted outside the named list), `hero-mobile-collage-crew.jpg` (0.40MB), `work-0999.jpg` (0.38MB), `work-099.jpg` (0.36MB), `tunnel-contact-sheet.jpg` (0.33MB), `power_sweeping_category_web.jpg` (0.32MB), `work-12.jpg` (0.29MB), `warehouse_category.jpg` (0.28MB), `parking_garage_cleaning.jpg` (0.18MB), `video-thumb-contact.jpg` (0.13MB), `svc-crew-1.jpg` (0.12MB), `work-10.jpg`, `work-09.jpg`, `work-03.jpg`, `work-05.jpg`, `work-01.jpg` (~0.08-0.10MB each), `pressure_cleaning_thumbs.jpg` (0.06MB), `warehouse_cleaning_thumb.jpg` (0.03MB). Several of these (`work-01/03/05/09/10/12.jpg`) look like leftover frames from the same shoot as the `work-02/04/06/07/08/11.jpg` files that _are_ used in the homepage gallery — Cory may want to swap some in for gallery variety rather than leave them dead.
+
+## Phase 5.3 — video re-encode needed a higher CRF than specified to hit the size target
+
+The punchlist's exact command (`-crf 28 -preset slow`) only took `video/hero-commercial.mp4` from 4.57MB to 4.51MB — negligible, because the source was already encoded at a similar bitrate (~1.2Mbps) for its content complexity. Tried progressively higher CRF at native 1280x720 (crf 30 → 3.67MB, crf 32 → 2.98MB, crf 34 → 2.42MB, crf 37 → 1.79MB) rather than downscaling resolution, since the video plays full-bleed as a hero background on desktop and downscaling would blur when upscaled back up. Landed on **crf 37**, audio stripped, faststart, same filename — 1.79MB, under the ≤2MB target, visually indistinguishable from source in spot-checked frames (it's also covered by a dark `.hero-overlay` gradient in production, so the tolerance for compression artifacts is high).
 
 ## Phase 4.4 — not started, blocked on Cory
 
