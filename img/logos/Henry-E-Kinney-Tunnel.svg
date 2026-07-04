@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Henry E. Kinney Tunnel</title>
+  <desc id="desc">Original Henry E. Kinney Tunnel wordmark with a tunnel arch icon.</desc>
+  <g fill="#111111">
+    <path d="M214 276v-84c0-68 53-120 126-120s126 52 126 120v84h-42v-84c0-46-34-80-84-80s-84 34-84 80v84h-42Z"/>
+    <path d="M281 276v-80c0-32 25-56 59-56s59 24 59 56v80h-37v-80c0-12-9-22-22-22s-22 10-22 22v80h-37Z"/>
+    <path d="M504 129h76v34h-76zM504 202h116v34H504zM504 275h76v34h-76z"/>
+    <path d="M112 356h576v27H112z"/>
+    <text x="400" y="484" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="73" font-weight="900" letter-spacing="2">HENRY E. KINNEY</text>
+    <text x="400" y="562" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="73" font-weight="900" letter-spacing="2">TUNNEL</text>
+  </g>
+</svg>
