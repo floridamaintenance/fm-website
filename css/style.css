@@ -373,6 +373,7 @@ p { margin: 0 0 1rem; }
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
+.svc-grid.svc-grid-5 { grid-template-columns: repeat(5, 1fr); }
 .svc-card {
   background: #fff;
   border: 1px solid var(--line);
