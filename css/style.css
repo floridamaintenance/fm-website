@@ -946,11 +946,12 @@ h2 { font-weight: 800; }
 .svc-card .body { position: relative; }
 .svc-card .idx {
   position: absolute; top: -34px; right: 16px;
-  font-family: var(--font-head); font-weight: 800; font-size: 2.4rem;
+  font-family: var(--font-head); font-weight: 800;
   color: #fff; background: var(--red); width: 52px; height: 52px;
   display: grid; place-items: center; border-radius: 8px;
   box-shadow: 0 8px 18px rgba(176,0,0,.3);
-  font-size: 1.3rem;
+  font-size: 1.7rem;
+  line-height: 1;
 }
 
 /* ---------- Projects (gallery captions) ---------- */
