@@ -747,7 +747,7 @@ textarea.form-control { resize: vertical; min-height: 130px; }
     opacity: 0; visibility: hidden; transition: opacity .25s ease; z-index: 99;
   }
   body.nav-open .nav-overlay { opacity: 1; visibility: visible; }
-  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .svc-grid, .svc-grid.svc-grid-5 { grid-template-columns: repeat(2, 1fr); }
   .features { grid-template-columns: 1fr; gap: 22px; }
   .logos { grid-template-columns: repeat(4, 1fr); }
   .logos .logo-cell { height: 104px; }
@@ -762,7 +762,7 @@ textarea.form-control { resize: vertical; min-height: 130px; }
   .nav { min-height: 70px; }
   .brand img { height: 50px; max-width: min(62vw, 220px); }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 26px; }
-  .svc-grid { grid-template-columns: 1fr; }
+  .svc-grid, .svc-grid.svc-grid-5 { grid-template-columns: 1fr; }
   .logos { grid-template-columns: repeat(3, 1fr); }
   .logos .logo-cell { height: 96px; padding: 12px; }
   .logos img { max-height: 72px; max-width: 132px; }
