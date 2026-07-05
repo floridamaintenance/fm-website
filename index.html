@@ -269,34 +269,22 @@
         <div class="container">
             <div class="about-split">
                 <div class="about-media">
-                    <div class="media-carousel" data-interval="4000">
-                        <img class="is-active" src="img/pressure_cleaning_category_web.jpg" alt="Pressure cleaning" data-cat="Pressure Cleaning">
-                        <img src="img/power_sweeping_category.jpg" alt="Regenerative air sweeper truck cleaning a tunnel" data-cat="Power Sweeping">
-                        <img src="img/warehouse-floor-stock.jpg" alt="Clean polished warehouse floor" data-cat="Warehouse Cleaning">
-                        <img src="img/power_scrubbing_card.jpg" alt="Power scrubbing" data-cat="Power Scrubbing">
-                        <img src="img/parking-garage-sweeping-truck.jpg" alt="Sweeper truck cleaning a parking garage" data-cat="Parking Garage Cleaning">
-                        <div class="media-caption"><span class="cat">Our Services</span><span class="ttl">Pressure Cleaning</span></div>
-                        <div class="media-dots">
-                            <button class="is-active" aria-label="Pressure Cleaning"></button>
-                            <button aria-label="Power Sweeping"></button>
-                            <button aria-label="Warehouse Cleaning"></button>
-                            <button aria-label="Power Scrubbing"></button>
-                            <button aria-label="Parking Garage Cleaning"></button>
+                    <div class="before-after" data-before-after style="--position: 50%;">
+                        <img class="before-after-img" src="img/stadium-roof-after.jpg" alt="Amerant Bank Arena roof after cleaning" loading="lazy">
+                        <div class="before-after-before">
+                            <img class="before-after-img" src="img/stadium-roof-before.jpg" alt="Amerant Bank Arena roof before cleaning" loading="lazy">
                         </div>
+                        <span class="before-after-label before">Before</span>
+                        <span class="before-after-label after">After</span>
+                        <div class="before-after-handle" aria-hidden="true"></div>
+                        <input class="before-after-range" type="range" min="0" max="100" value="50" aria-label="Compare before and after stadium roof cleaning photos">
                     </div>
-                    <div class="exp-badge"><div class="n">2014</div><div class="t">Established<br>Miami, FL</div></div>
                 </div>
                 <div class="about-body">
-                    <span class="eyebrow">Welcome to Florida Maintenance</span>
-                    <h2>South Florida's Heavy-Duty Cleaning Crew</h2>
-                    <p>We're a Miami-based property maintenance company keeping commercial and industrial properties looking their best since 2014. From parking garages and retail centers to warehouses, roadways and tunnels, we bring the right equipment and a dependable local crew to each job.</p>
-                    <ul class="check-list">
-                        <li>Pressure cleaning &amp; power sweeping</li>
-                        <li>Warehouse &amp; floor scrubbing</li>
-                        <li>Parking garage cleaning</li>
-                        <li>Flexible, recurring scheduling</li>
-                    </ul>
-                    <a href="aboutus.html" class="btn btn-primary">More About Us</a>
+                    <span class="eyebrow">See the Difference</span>
+                    <h2>Real Results, Not Just Promises</h2>
+                    <p>This is the Amerant Bank Arena roof, cleaned by our crew &mdash; one example of the kind of turnaround you can expect on your own property. We're a Miami-based crew that's kept commercial and industrial properties looking their best since 2014.</p>
+                    <a href="services/exteriorstadiumcleaning.html" class="btn btn-primary">See More Results</a>
                 </div>
             </div>
         </div>
@@ -532,20 +520,11 @@
             counters.forEach(function (c) { io.observe(c); });
         }
 
-        // Welcome image carousel
-        document.querySelectorAll('.media-carousel').forEach(function (mc) {
-            var imgs = [].slice.call(mc.querySelectorAll('img'));
-            var dots = [].slice.call(mc.querySelectorAll('.media-dots button'));
-            var ttl = mc.querySelector('.media-caption .ttl');
-            var n = imgs.length, i = 0, timer = null;
-            var interval = +mc.getAttribute('data-interval') || 4000;
-            function go(k){ i=(k+n)%n; imgs.forEach(function(im,j){ im.classList.toggle('is-active', j===i); }); dots.forEach(function(d,j){ d.classList.toggle('is-active', j===i); }); if(ttl) ttl.textContent = imgs[i].getAttribute('data-cat') || ''; }
-            function start(){ stop(); timer=setInterval(function(){ go(i+1); }, interval); }
-            function stop(){ if(timer){ clearInterval(timer); timer=null; } }
-            dots.forEach(function(d,j){ d.addEventListener('click', function(){ go(j); start(); }); });
-            mc.addEventListener('mouseenter', stop);
-            mc.addEventListener('mouseleave', start);
-            go(0); start();
+        // Before/after slider
+        document.querySelectorAll('[data-before-after]').forEach(function(slider){
+            var range = slider.querySelector('.before-after-range');
+            function update(){ slider.style.setProperty('--position', range.value + '%'); }
+            if(range){ range.addEventListener('input', update); update(); }
         });
     })();
     </script>

@@ -1010,38 +1010,6 @@ h2 { font-weight: 800; }
 .scn-prev:hover, .scn-next:hover { background: var(--red); color: #fff; border-color: var(--red); }
 .svc-slide .eyebrow .scn-count { color: var(--muted); margin-left: 4px; letter-spacing: 0; }
 
-/* ---------- Welcome image carousel ---------- */
-.media-carousel {
-  position: relative; border-radius: 10px; overflow: hidden;
-  box-shadow: var(--shadow); aspect-ratio: 4 / 3; max-height: 470px; width: 100%;
-}
-.media-carousel > img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-  opacity: 0; transition: opacity .8s ease; max-height: none; border-radius: 0;
-}
-.media-carousel > img.is-active { opacity: 1; }
-.media-caption {
-  position: absolute; left: 0; bottom: 0; width: 100%; z-index: 2;
-  padding: 30px 20px 16px; color: #fff;
-  background: linear-gradient(transparent, rgba(0,0,0,.65));
-}
-.media-caption .cat { display: block; color: #ff9a9a; text-transform: uppercase; font-size: .72rem; letter-spacing: .1em; font-weight: 700; margin-bottom: 2px; }
-.media-caption .ttl { font-family: var(--font-head); font-weight: 700; font-size: 1.15rem; }
-.media-dots {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  display: flex;
-  gap: 7px;
-  z-index: 3;
-  padding: 7px 8px;
-  border-radius: 999px;
-  background: rgba(0,0,0,.32);
-  backdrop-filter: blur(8px);
-}
-.media-dots button { width: 9px; height: 9px; border-radius: 50%; border: 0; background: rgba(255,255,255,.5); cursor: pointer; padding: 0; transition: background .2s ease, transform .2s ease; }
-.media-dots button.is-active { background: #fff; transform: scale(1.2); }
-
 /* ---------- Hero background video ---------- */
 .hero { overflow: hidden; background: var(--bg-dark); }
 .hero-video {
@@ -1069,7 +1037,6 @@ h2 { font-weight: 800; }
 @media (max-width: 640px) {
   .about-split { gap: 26px; }
   .about-media { margin-bottom: 4px; }
-  .media-carousel { aspect-ratio: 3 / 2; max-height: 320px; border-radius: 14px; }
   .exp-badge {
     top: 14px; left: 14px; right: auto; bottom: auto;
     padding: 10px 14px; border-radius: 10px;
@@ -1086,8 +1053,6 @@ h2 { font-weight: 800; }
     left: 14px;
     bottom: 14px;
   }
-  .media-caption { padding: 22px 16px 14px; }
-  .media-caption .ttl { font-size: 1rem; }
   .about-body { text-align: center; }
   .about-body .eyebrow { justify-content: center; }
   .about-body h2 { font-size: 1.7rem; }
